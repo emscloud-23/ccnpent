@@ -847,7 +847,7 @@ config t
   int Ethernet1/2
     mpls ip
     mpls label protocol ldp
-    !mpls mtu override 1512
+    mpls mtu override 1512
 ****
 ***
 R2:P:
@@ -857,11 +857,11 @@ config t
   int Ethernet1/1
     mpls ip
     mpls label protocol ldp
-    !mpls mtu override 1512
+    mpls mtu override 1512
   int Ethernet1/2
     mpls ip
     mpls label protocol ldp
-    !mpls mtu override 1512
+    mpls mtu override 1512
 ****
 R1-1:PEz
 config t
@@ -870,7 +870,7 @@ config t
   int Ethernet1/0
     mpls ip
     mpls label protocol ldp
-    !mpls mtu override 1512
+    mpls mtu override 1512
 
 How to check:
 R2P#show mpls ldp neighbor (lib)
@@ -1151,13 +1151,13 @@ IGP CONFIGURATION ON CLINETS: PE engineers talk with CE eng.
 CE engineers will do this!
 
 ****
-On all PNB(eigrp) routers:
+On all PNB(eigrp) routers: D1 and ISP1
 config t
  router eigrp 90
   network 10.0.0.0
   no auto-summary
 ****
-On all BPI(ospf) routers:
+On all BPI(ospf) routers: D2 and ISP2
 config t
  no router ospf 1
  router ospf 69
